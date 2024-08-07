@@ -1,11 +1,15 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
+    event = 'BufWritePre', -- uncomment for format on save
+    opts = {
+      require "configs.conform",
+      formatters_by_ft = {
+        go = { "goimports", "gofumpt" },
+      },
+    },
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -13,13 +17,16 @@ return {
     end,
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+        "lua", "markdown", "markdown_inline",
+        "python",
+        "rust", "ron", -- Rust
+        "go", "gomod", "gowork", "gosum" -- Golang
+  		},
+  	},
+  },
+
 }
