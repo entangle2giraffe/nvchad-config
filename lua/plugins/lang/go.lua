@@ -8,12 +8,7 @@ return {
     },
   },
 
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = { "goimports", "gofumpts", "delve", "gomodifytags", "impl", "gopls"}
-    },
-  },
+
 
   {
     "nvimtools/none-ls.nvim",

@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "gopls", "pyright" }
+local servers = { "html", "cssls", "gopls", "pyright", "ruff" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -56,6 +56,10 @@ lspconfig.gopls.setup({
     }
   }
 })
+
+lspconfig.pyright.setup{}
+lspconfig.ruff.setup{}
+lspconfig.rust_analyzer.setup{}
 
 -- configuring single server, example: typescript
 -- lspconfig.tsserver.setup {

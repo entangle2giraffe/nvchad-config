@@ -4,9 +4,6 @@ return {
     event = 'BufWritePre', -- uncomment for format on save
     opts = {
       require "configs.conform",
-      formatters_by_ft = {
-        go = { "goimports", "gofumpt" },
-      },
     },
   },
 
@@ -27,6 +24,13 @@ return {
         "go", "gomod", "gowork", "gosum" -- Golang
   		},
   	},
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      require "configs.mason",
+    },
   },
 
 }
